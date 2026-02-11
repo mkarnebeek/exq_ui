@@ -1,9 +1,16 @@
 <div phx-hook="Table" id="table-component">
   <div class="row align-items-center">
     <div class="col-6">
-      <%= for %{name: name, label: label} <- @actions do %>
-        <button type="button" class="my-2 btn btn-danger btn-sm js-action" data-name={name}>
-          <%= label %>
+      <%= for action <- @actions do %>
+        <button
+          type="button"
+          class="my-2 btn btn-danger btn-sm js-action"
+          data-name={action.name}
+          <%= if action[:confirm] do %>
+            data-confirm={action.confirm}
+          <% end %>
+        >
+          <%= action.label %>
         </button>
       <% end %>
     </div>
