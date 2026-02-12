@@ -48,6 +48,14 @@ defmodule ExqUIWeb.ScheduledLive.IndexTest do
     refute html =~ ~r/Hardworker.*509/
   end
 
+  test "delete_all button has confirmation dialog", %{conn: conn} do
+    {:ok, view, _} = live(conn, "/scheduled")
+    html = render(view)
+
+    assert html =~ ~r/data-confirm="Are you sure you want to delete all scheduled jobs\? This action cannot be undone\."/
+    assert html =~ ~r/Delete All/
+  end
+
   test "add to queue", %{conn: conn} do
     {:ok, view, _} = live(conn, "/scheduled")
 

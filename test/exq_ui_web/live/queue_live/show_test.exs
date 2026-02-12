@@ -21,6 +21,14 @@ defmodule ExqUIWeb.QueueLive.ShowTest do
     refute html =~ ~r/Hardworker.*428/
   end
 
+  test "delete_all button has confirmation dialog", %{conn: conn} do
+    {:ok, view, _} = live(conn, "/queues/hard")
+    html = render(view)
+
+    assert html =~ ~r/data-confirm="Are you sure you want to delete all jobs in this queue\? This action cannot be undone\."/
+    assert html =~ ~r/Delete All/
+  end
+
   test "delete", %{conn: conn} do
     {:ok, view, _} = live(conn, "/queues/hard")
 

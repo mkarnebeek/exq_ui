@@ -72,4 +72,12 @@ defmodule ExqUIWeb.DeadLive.IndexTest do
     refute html =~ ~r/hard.*409.*RuntimeError/
     refute html =~ ~r/hard.*548.*kill/
   end
+
+  test "delete_all button has confirmation dialog", %{conn: conn} do
+    {:ok, view, _} = live(conn, "/dead")
+    html = render(view)
+
+    assert html =~ ~r/data-confirm="Are you sure you want to delete all dead jobs\? This action cannot be undone\."/
+    assert html =~ ~r/Delete All/
+  end
 end
