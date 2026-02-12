@@ -6,9 +6,7 @@
           type="button"
           class="my-2 btn btn-danger btn-sm js-action"
           data-name={action.name}
-          <%= if action[:confirm] do %>
-            data-confirm={action.confirm}
-          <% end %>
+          data-confirm={Map.get(action, :confirm)}
         >
           <%= action.label %>
         </button>
