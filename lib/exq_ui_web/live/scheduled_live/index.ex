@@ -24,7 +24,12 @@ defmodule ExqUIWeb.ScheduledLive.Index do
       ])
       |> assign(:actions, [
         %{name: "delete", label: "Delete"},
-        %{name: "delete_all", label: "Delete All", confirm: "Are you sure you want to delete all scheduled jobs? This action cannot be undone."},
+        %{
+          name: "delete_all",
+          label: "Delete All",
+          confirm:
+            "Are you sure you want to delete all scheduled jobs? This action cannot be undone."
+        },
         %{name: "dequeue_now", label: "Add to Queue"}
       ])
       |> assign(:config, config)

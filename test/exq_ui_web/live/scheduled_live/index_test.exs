@@ -52,7 +52,9 @@ defmodule ExqUIWeb.ScheduledLive.IndexTest do
     {:ok, view, _} = live(conn, "/scheduled")
     html = render(view)
 
-    assert html =~ ~r/data-confirm_message="Are you sure you want to delete all scheduled jobs\? This action cannot be undone\."/
+    assert html =~
+             ~r/data-confirm_message="Are you sure you want to delete all scheduled jobs\? This action cannot be undone\."/
+
     assert html =~ ~r/Delete All/
   end
 

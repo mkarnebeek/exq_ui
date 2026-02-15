@@ -14,7 +14,12 @@ defmodule ExqUIWeb.QueueLive.Show do
       ])
       |> assign(:actions, [
         %{name: "delete", label: "Delete"},
-        %{name: "delete_all", label: "Delete All", confirm: "Are you sure you want to delete all jobs in this queue? This action cannot be undone."}
+        %{
+          name: "delete_all",
+          label: "Delete All",
+          confirm:
+            "Are you sure you want to delete all jobs in this queue? This action cannot be undone."
+        }
       ])
       |> assign(:config, config)
 

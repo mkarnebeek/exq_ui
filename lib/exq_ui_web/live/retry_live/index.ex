@@ -26,7 +26,11 @@ defmodule ExqUIWeb.RetryLive.Index do
       ])
       |> assign(:actions, [
         %{name: "delete", label: "Delete"},
-        %{name: "delete_all", label: "Delete All", confirm: "Are you sure you want to delete all retry jobs? This action cannot be undone."},
+        %{
+          name: "delete_all",
+          label: "Delete All",
+          confirm: "Are you sure you want to delete all retry jobs? This action cannot be undone."
+        },
         %{name: "retry_now", label: "Retry Now"}
       ])
       |> assign(:config, config)

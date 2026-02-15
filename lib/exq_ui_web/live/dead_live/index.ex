@@ -26,7 +26,11 @@ defmodule ExqUIWeb.DeadLive.Index do
       ])
       |> assign(:actions, [
         %{name: "delete", label: "Delete"},
-        %{name: "delete_all", label: "Delete All", confirm: "Are you sure you want to delete all dead jobs? This action cannot be undone."},
+        %{
+          name: "delete_all",
+          label: "Delete All",
+          confirm: "Are you sure you want to delete all dead jobs? This action cannot be undone."
+        },
         %{name: "dequeue_now", label: "Retry Now"}
       ])
       |> assign(:config, config)
