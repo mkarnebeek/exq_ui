@@ -27,7 +27,7 @@ let Table = {
     let actions = table.querySelectorAll(".js-action");
     actions.forEach((action) => {
       action.addEventListener("click", function () {
-        const confirmMessage = this.dataset.confirm;
+        const confirmMessage = this.dataset.confirmMessage;
         if (confirmMessage && !window.confirm(confirmMessage)) {
           return;
         }

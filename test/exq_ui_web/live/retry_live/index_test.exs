@@ -52,7 +52,7 @@ defmodule ExqUIWeb.RetryLive.IndexTest do
     {:ok, view, _} = live(conn, "/retries")
     html = render(view)
 
-    assert html =~ ~r/data-confirm="Are you sure you want to delete all retry jobs\? This action cannot be undone\."/
+    assert html =~ ~r/data-confirm_message="Are you sure you want to delete all retry jobs\? This action cannot be undone\."/
     assert html =~ ~r/Delete All/
   end
 

@@ -77,7 +77,7 @@ defmodule ExqUIWeb.DeadLive.IndexTest do
     {:ok, view, _} = live(conn, "/dead")
     html = render(view)
 
-    assert html =~ ~r/data-confirm="Are you sure you want to delete all dead jobs\? This action cannot be undone\."/
+    assert html =~ ~r/data-confirm_message="Are you sure you want to delete all dead jobs\? This action cannot be undone\."/
     assert html =~ ~r/Delete All/
   end
 end

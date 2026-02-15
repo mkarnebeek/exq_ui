@@ -25,7 +25,7 @@ defmodule ExqUIWeb.QueueLive.ShowTest do
     {:ok, view, _} = live(conn, "/queues/hard")
     html = render(view)
 
-    assert html =~ ~r/data-confirm="Are you sure you want to delete all jobs in this queue\? This action cannot be undone\."/
+    assert html =~ ~r/data-confirm_message="Are you sure you want to delete all jobs in this queue\? This action cannot be undone\."/
     assert html =~ ~r/Delete All/
   end
 
